@@ -1,0 +1,107 @@
+/* ================= PAGE ================= */
+
+.recommendations-page{
+    background:#f5f7fb;
+    min-height:100vh;
+}
+
+/* ================= LAYOUT ================= */
+
+.recommendations-container{
+    display:flex;
+}
+
+.recommendations-content{
+    flex:1;
+    padding:35px;
+}
+
+/* ================= HEADER ================= */
+
+.recommendation-header{
+    margin-bottom:30px;
+}
+
+.recommendation-header h2{
+    font-size:34px;
+    font-weight:700;
+    color:#12355B;
+    margin-bottom:8px;
+}
+
+.recommendation-header p{
+    color:#64748b;
+    font-size:16px;
+}
+
+/* ================= FILTER ================= */
+
+.filter-bar{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr auto;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+.search-box{
+
+    height:52px;
+
+    border-radius:12px;
+
+}
+
+.filter-bar .form-select{
+
+    height:52px;
+
+    border-radius:12px;
+
+}
+
+.filter-bar button{
+
+    height:52px;
+
+    padding:0 25px;
+
+    border-radius:12px;
+
+}
+
+/* ================= CARDS ================= */
+
+.recommendations-content .row{
+
+    row-gap:30px;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+    .recommendations-container{
+
+        flex-direction:column;
+
+    }
+
+    .recommendations-content{
+
+        padding:20px;
+
+    }
+
+    .filter-bar{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

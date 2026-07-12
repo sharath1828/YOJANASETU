@@ -1,0 +1,63 @@
+.category-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.category-card:hover{
+
+    transform:translateY(-10px);
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+.category-card:hover h5{
+
+    color:white;
+
+}
+
+.category-icon{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+
+    color:#16A34A;
+
+    transition:.3s;
+
+}
+
+.category-card:hover .category-icon{
+
+    color:white;
+
+    transform:scale(1.2);
+
+}
+
+.category-card h5{
+
+    font-weight:700;
+
+    margin-top:15px;
+
+}

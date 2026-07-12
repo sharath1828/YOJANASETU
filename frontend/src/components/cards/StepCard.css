@@ -1,0 +1,65 @@
+.step-card{
+
+    text-align:center;
+
+    padding:25px;
+
+    transition:.4s;
+
+}
+
+.step-circle{
+
+    width:70px;
+
+    height:70px;
+
+    background:#2563EB;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.step-card h5{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.step-card p{
+
+    color:#64748B;
+
+    line-height:1.7;
+
+}
+
+.step-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.step-card:hover .step-circle{
+
+    background:#16A34A;
+
+}

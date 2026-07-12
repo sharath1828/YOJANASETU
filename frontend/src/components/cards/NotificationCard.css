@@ -1,0 +1,152 @@
+/* =====================================================
+   NOTIFICATION CARD
+===================================================== */
+
+.notification-card{
+    background:#ffffff;
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    border-left:6px solid #16a34a;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:all .35s ease;
+}
+
+.notification-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+}
+
+/* ================= ICON ================= */
+
+.notification-icon{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    color:white;
+    flex-shrink:0;
+}
+
+/* ================= CONTENT ================= */
+
+.notification-content{
+    flex:1;
+}
+
+.notification-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.notification-top h4{
+    margin:0;
+    color:#12355B;
+    font-size:20px;
+    font-weight:700;
+}
+
+.notification-time{
+    color:#64748b;
+    font-size:14px;
+}
+
+.notification-category{
+    display:inline-block;
+    background:#eef2ff;
+    color:#2563eb;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.notification-content p{
+    color:#64748b;
+    margin:0;
+    line-height:1.6;
+}
+
+/* ================= BUTTON ================= */
+
+.notification-action .btn{
+    border-radius:10px;
+    font-weight:600;
+    padding:10px 18px;
+}
+
+/* ================= COLORS ================= */
+
+/* Success */
+
+.notification-card.success{
+    border-left-color:#16a34a;
+}
+
+.notification-card.success .notification-icon{
+    background:#16a34a;
+}
+
+/* Warning */
+
+.notification-card.warning{
+    border-left-color:#f59e0b;
+}
+
+.notification-card.warning .notification-icon{
+    background:#f59e0b;
+}
+
+/* Danger */
+
+.notification-card.danger{
+    border-left-color:#ef4444;
+}
+
+.notification-card.danger .notification-icon{
+    background:#ef4444;
+}
+
+/* Info */
+
+.notification-card.info{
+    border-left-color:#2563eb;
+}
+
+.notification-card.info .notification-icon{
+    background:#2563eb;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .notification-card{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .notification-top{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+    .notification-action{
+        width:100%;
+    }
+
+    .notification-action .btn{
+        width:100%;
+    }
+
+}

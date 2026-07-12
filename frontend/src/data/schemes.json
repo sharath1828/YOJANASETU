@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "PM-KISAN",
+    "category": "Farmer",
+    "benefit": "₹6,000 per year",
+    "image": "pmkisan.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Ayushman Bharat",
+    "category": "Healthcare",
+    "benefit": "₹5 Lakh Health Insurance",
+    "image": "ayushman.jpg"
+  },
+  {
+    "id": 3,
+    "name": "National Scholarship",
+    "category": "Education",
+    "benefit": "Scholarship Support",
+    "image": "scholarship.jpg"
+  },
+  {
+    "id": 4,
+    "name": "PM Awas Yojana",
+    "category": "Housing",
+    "benefit": "Affordable Housing",
+    "image": "pmawas.jpg"
+  }
+]

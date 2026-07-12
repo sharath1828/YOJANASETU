@@ -1,0 +1,41 @@
+.register-form{
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:20px;
+
+}
+
+.register-form h2{
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.register-form p{
+
+    color:#64748B;
+
+    margin-bottom:30px;
+
+}
+
+.register-form .form-control{
+
+    padding:14px;
+
+    border-radius:10px;
+
+}
+
+.register-form .btn-success{
+
+    padding:14px;
+
+    border-radius:10px;
+
+}

@@ -1,0 +1,19 @@
+@media(max-width:992px){
+
+    .container-custom{
+
+        width:95%;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+}

@@ -1,0 +1,22 @@
+.btn-primary-custom{
+
+    background:var(--primary-color);
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:12px 28px;
+
+}
+
+.btn-primary-custom:hover{
+
+    background:var(--primary-dark);
+
+}
+
+.btn-success-custom{
+
+    background:var(--secondary-color);
+    color:white;
+
+}

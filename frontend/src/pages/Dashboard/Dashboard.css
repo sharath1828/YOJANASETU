@@ -1,0 +1,133 @@
+/* =====================================================
+   DASHBOARD PAGE
+===================================================== */
+
+.dashboard-page{
+    min-height:100vh;
+    background:#f5f7fb;
+}
+
+.dashboard-container{
+    display:flex;
+}
+
+.dashboard-content{
+    flex:1;
+    padding:35px;
+    overflow-y:auto;
+}
+
+/* =====================================================
+   WELCOME SECTION
+===================================================== */
+
+.welcome-section{
+    margin-bottom:35px;
+}
+
+.welcome-section h2{
+    font-size:36px;
+    font-weight:700;
+    color:#12355B;
+    margin-bottom:8px;
+}
+
+.welcome-section p{
+    color:#64748b;
+    font-size:17px;
+}
+
+/* =====================================================
+   STATS SECTION
+===================================================== */
+
+.stats-section{
+    margin-bottom:45px;
+}
+
+/* =====================================================
+   AI RECOMMENDATION SECTION
+===================================================== */
+
+.recommendation-section{
+    margin-top:20px;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.section-header h3{
+    font-size:32px;
+    color:#12355B;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.section-header p{
+    color:#64748b;
+    font-size:16px;
+    margin:0;
+}
+
+.section-header .btn{
+    border-radius:12px;
+    padding:10px 22px;
+    font-weight:600;
+}
+
+/* =====================================================
+   ROW SPACING
+===================================================== */
+
+.row{
+    margin-left:0;
+    margin-right:0;
+}
+
+.row > div{
+    padding-left:12px;
+    padding-right:12px;
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.dashboard-content::-webkit-scrollbar{
+    width:8px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb{
+    background:#cbd5e1;
+    border-radius:20px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:992px){
+
+    .dashboard-container{
+        flex-direction:column;
+    }
+
+    .dashboard-content{
+        padding:20px;
+    }
+
+    .section-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .welcome-section h2{
+        font-size:28px;
+    }
+
+}

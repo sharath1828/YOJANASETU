@@ -1,0 +1,70 @@
+/* =====================================================
+   DASHBOARD CARD
+===================================================== */
+
+.dashboard-card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 12px 30px rgba(15,23,42,.08);
+    border:1px solid #eef2f7;
+    transition:all .35s ease;
+    cursor:pointer;
+    height:100%;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(15,23,42,.15);
+}
+
+/* ================= ICON ================= */
+
+.card-icon{
+    width:70px;
+    height:70px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:30px;
+    flex-shrink:0;
+}
+
+/* ================= CONTENT ================= */
+
+.card-content{
+    flex:1;
+}
+
+.card-content h3{
+    font-size:34px;
+    font-weight:700;
+    color:#12355B;
+    margin-bottom:6px;
+}
+
+.card-content p{
+    color:#64748b;
+    font-size:15px;
+    margin-bottom:10px;
+}
+
+/* ================= STATUS ================= */
+
+.card-status{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:#16a34a;
+    font-weight:600;
+}
+
+.card-status svg{
+    font-size:12px;
+}
