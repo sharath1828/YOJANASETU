@@ -1,0 +1,94 @@
+/* =====================================================
+   CHAT MESSAGE
+===================================================== */
+
+.chat-message{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+}
+
+/* ================= AI MESSAGE ================= */
+
+.chat-message.ai{
+    justify-content:flex-start;
+}
+
+/* ================= USER MESSAGE ================= */
+
+.chat-message.user{
+    justify-content:flex-end;
+    flex-direction:row-reverse;
+}
+
+/* ================= AVATAR ================= */
+
+.chat-avatar{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#ffffff;
+    font-size:20px;
+    flex-shrink:0;
+}
+
+.chat-message.ai .chat-avatar{
+    background:#16a34a;
+}
+
+.chat-message.user .chat-avatar{
+    background:#2563eb;
+}
+
+/* ================= BUBBLE ================= */
+
+.chat-bubble{
+    max-width:75%;
+    padding:18px 20px;
+    border-radius:18px;
+    line-height:1.7;
+    box-shadow:0 8px 20px rgba(15,23,42,.08);
+    word-wrap:break-word;
+}
+
+/* AI Bubble */
+
+.chat-message.ai .chat-bubble{
+    background:#f0fdf4;
+    color:#12355B;
+    border-top-left-radius:6px;
+}
+
+/* User Bubble */
+
+.chat-message.user .chat-bubble{
+    background:#2563eb;
+    color:#ffffff;
+    border-top-right-radius:6px;
+}
+
+.chat-bubble p{
+    margin:0;
+    white-space:pre-line;
+    font-size:15px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .chat-bubble{
+        max-width:90%;
+        padding:15px;
+    }
+
+    .chat-avatar{
+        width:42px;
+        height:42px;
+        font-size:18px;
+    }
+
+}

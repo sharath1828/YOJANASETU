@@ -1,0 +1,96 @@
+/* =====================================================
+   CHAT INPUT
+===================================================== */
+
+.chat-input-container{
+    margin-top:20px;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+    padding:12px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:0 10px 25px rgba(15,23,42,.08);
+}
+
+/* ================= INPUT ================= */
+
+.chat-input-container input{
+    flex:1;
+    border:none;
+    outline:none;
+    font-size:15px;
+    color:#334155;
+    background:transparent;
+}
+
+.chat-input-container input::placeholder{
+    color:#94a3b8;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.chat-action-btn{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#f1f5f9;
+    color:#64748b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:.3s;
+    font-size:18px;
+}
+
+.chat-action-btn:hover{
+    background:#16a34a;
+    color:#ffffff;
+    transform:scale(1.05);
+}
+
+/* ================= SEND BUTTON ================= */
+
+.send-btn{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#16a34a;
+    color:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:.3s;
+    font-size:18px;
+}
+
+.send-btn:hover{
+    background:#15803d;
+    transform:scale(1.08);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .chat-input-container{
+        gap:8px;
+        padding:10px;
+    }
+
+    .chat-action-btn,
+    .send-btn{
+        width:42px;
+        height:42px;
+    }
+
+    .chat-input-container input{
+        font-size:14px;
+    }
+
+}

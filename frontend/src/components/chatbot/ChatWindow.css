@@ -1,0 +1,80 @@
+/* =====================================================
+   CHAT WINDOW
+===================================================== */
+
+.chat-window{
+    flex:1;
+    background:#ffffff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(15,23,42,.08);
+    border:1px solid #eef2f7;
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+    height:550px;
+    overflow-y:auto;
+
+    scroll-behavior:smooth;
+}
+
+/* Scrollbar */
+
+.chat-window::-webkit-scrollbar{
+    width:8px;
+}
+
+.chat-window::-webkit-scrollbar-track{
+    background:#f1f5f9;
+    border-radius:20px;
+}
+
+.chat-window::-webkit-scrollbar-thumb{
+    background:#16a34a;
+    border-radius:20px;
+}
+
+.chat-window::-webkit-scrollbar-thumb:hover{
+    background:#15803d;
+}
+
+/* Welcome Animation */
+
+.chat-window .chat-message:first-child{
+    animation:fadeIn .6s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .chat-window{
+        height:450px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .chat-window{
+        height:400px;
+        padding:18px;
+    }
+
+}

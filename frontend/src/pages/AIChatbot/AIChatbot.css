@@ -1,0 +1,102 @@
+/* =====================================================
+   AI CHATBOT PAGE
+===================================================== */
+
+.chatbot-page{
+    background:#f5f7fb;
+    min-height:100vh;
+}
+
+.chatbot-container{
+    display:flex;
+}
+
+.chatbot-content{
+    flex:1;
+    padding:35px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.chatbot-header{
+    margin-bottom:30px;
+}
+
+.chatbot-header h2{
+    font-size:36px;
+    font-weight:700;
+    color:#12355B;
+    margin-bottom:8px;
+}
+
+.chatbot-header p{
+    color:#64748b;
+    font-size:16px;
+}
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+.chat-layout{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:25px;
+    align-items:start;
+}
+
+/* Left Panel */
+
+.suggestion-panel{
+    position:sticky;
+    top:100px;
+}
+
+/* Right Panel */
+
+.chat-panel{
+    display:flex;
+    flex-direction:column;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1200px){
+
+    .chat-layout{
+        grid-template-columns:280px 1fr;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .chatbot-container{
+        flex-direction:column;
+    }
+
+    .chatbot-content{
+        padding:20px;
+    }
+
+    .chat-layout{
+        grid-template-columns:1fr;
+    }
+
+    .suggestion-panel{
+        position:static;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .chatbot-header h2{
+        font-size:30px;
+    }
+
+}

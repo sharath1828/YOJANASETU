@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/logos/logo.jpeg";
 
 import {
+  FaRobot,
   FaBell,
   FaCog,
   FaSearch,
@@ -12,12 +13,10 @@ import {
 } from "react-icons/fa";
 
 function DashboardNavbar() {
-
   return (
-
     <nav className="dashboard-navbar">
 
-      {/* Logo */}
+      {/* ================= LOGO ================= */}
 
       <div className="dashboard-left">
 
@@ -41,11 +40,11 @@ function DashboardNavbar() {
 
       </div>
 
-      {/* Search */}
+      {/* ================= SEARCH ================= */}
 
       <div className="dashboard-search">
 
-        <FaSearch className="search-icon"/>
+        <FaSearch className="search-icon" />
 
         <input
           type="text"
@@ -54,15 +53,28 @@ function DashboardNavbar() {
 
       </div>
 
-      {/* Right */}
+      {/* ================= RIGHT ================= */}
 
       <div className="dashboard-right">
+
+        {/* AI Assistant */}
+
+        <Link
+          to="/ai-chatbot"
+          className="icon-btn ai-btn"
+          title="AI Assistant"
+        >
+
+          <FaRobot />
+
+        </Link>
 
         {/* Notifications */}
 
         <Link
           to="/notifications"
           className="icon-btn notification-btn"
+          title="Notifications"
         >
 
           <FaBell />
@@ -80,6 +92,7 @@ function DashboardNavbar() {
         <Link
           to="/settings"
           className="icon-btn"
+          title="Settings"
         >
 
           <FaCog />
@@ -116,9 +129,7 @@ function DashboardNavbar() {
       </div>
 
     </nav>
-
   );
-
 }
 
 export default DashboardNavbar;
