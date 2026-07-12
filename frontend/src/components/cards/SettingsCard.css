@@ -1,0 +1,73 @@
+/* =====================================================
+   SETTINGS CARD
+===================================================== */
+
+.settings-card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:28px;
+    border:1px solid #eef2f7;
+    box-shadow:0 10px 25px rgba(15,23,42,.08);
+    transition:all .35s ease;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    height:100%;
+}
+
+.settings-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(15,23,42,.15);
+}
+
+/* ================= CONTENT ================= */
+
+.settings-card-content h3{
+    color:#12355B;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.settings-card-content p{
+    color:#64748b;
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* ================= BUTTON ================= */
+
+.settings-btn{
+    border:none;
+    background:#16a34a;
+    color:#ffffff;
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:600;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.settings-btn:hover{
+    background:#15803d;
+    transform:translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .settings-card{
+        padding:22px;
+    }
+
+    .settings-card-content h3{
+        font-size:20px;
+    }
+
+}

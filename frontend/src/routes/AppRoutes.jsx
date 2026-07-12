@@ -12,6 +12,7 @@ import SavedSchemes from "../pages/SavedSchemes/SavedSchemes";
 import Notifications from "../pages/Notifications/Notifications";
 import BrowseSchemes from "../pages/BrowseSchemes/BrowseSchemes";
 import AIChatbot from "../pages/AIChatbot/AIChatbot";
+import Settings from "../pages/Settings/Settings";
 function AppRoutes() {
   return (
     <Routes>
@@ -27,6 +28,7 @@ function AppRoutes() {
       <Route path="/notifications" element={<Notifications />} />
       <Route path="/schemes" element={<BrowseSchemes />} />
       <Route path="/ai-chatbot" element={<AIChatbot />} />
+      <Route path="/settings" element={<Settings />} />
     </Routes>
   );
 }
