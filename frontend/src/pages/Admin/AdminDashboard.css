@@ -1,0 +1,145 @@
+/* =====================================================
+   ADMIN DASHBOARD
+===================================================== */
+
+.admin-page{
+    background:#f5f7fb;
+    min-height:100vh;
+}
+
+.admin-container{
+    display:flex;
+}
+
+.admin-content{
+    flex:1;
+    padding:35px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.admin-header{
+    margin-bottom:35px;
+}
+
+.admin-header h2{
+    font-size:36px;
+    font-weight:700;
+    color:#12355B;
+    margin-bottom:8px;
+}
+
+.admin-header p{
+    color:#64748b;
+    font-size:16px;
+}
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.admin-stats{
+    margin-bottom:40px;
+}
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.quick-actions{
+    background:#ffffff;
+    border-radius:20px;
+    padding:30px;
+    margin-bottom:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.quick-actions h3{
+    color:#12355B;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.action-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.action-grid .btn{
+    height:55px;
+    font-size:16px;
+    font-weight:600;
+    border-radius:12px;
+}
+
+/* =====================================================
+   RECENT ACTIVITY
+===================================================== */
+
+.recent-activity{
+    background:#ffffff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.recent-activity h3{
+    color:#12355B;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.activity-card{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.activity-card p{
+    margin:0;
+    padding:15px 18px;
+    background:#f8fafc;
+    border-left:5px solid #16a34a;
+    border-radius:12px;
+    color:#475569;
+    font-weight:500;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1200px){
+
+    .action-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:992px){
+
+    .admin-container{
+        flex-direction:column;
+    }
+
+    .admin-content{
+        padding:20px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .admin-header h2{
+        font-size:30px;
+    }
+
+    .action-grid{
+        grid-template-columns:1fr;
+    }
+
+}

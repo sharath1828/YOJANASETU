@@ -1,0 +1,199 @@
+/* =====================================================
+   ADMIN NAVBAR
+===================================================== */
+
+.admin-navbar{
+    height:75px;
+    background:#ffffff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+/* ================= BRAND ================= */
+
+.admin-brand{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+}
+
+.admin-brand img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.admin-brand h3{
+    margin:0;
+    color:#12355B;
+    font-size:22px;
+    font-weight:700;
+}
+
+.admin-brand p{
+    margin:0;
+    color:#64748b;
+    font-size:13px;
+}
+
+/* ================= SEARCH ================= */
+
+.admin-search{
+    width:420px;
+    height:48px;
+    background:#f8fafc;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    padding:0 18px;
+    border:1px solid #e5e7eb;
+}
+
+.admin-search .search-icon{
+    color:#94a3b8;
+    margin-right:10px;
+}
+
+.admin-search input{
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:15px;
+}
+
+/* ================= RIGHT ================= */
+
+.admin-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/* ================= ICON BUTTON ================= */
+
+.admin-icon-btn{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#f8fafc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:.3s;
+    position:relative;
+    font-size:18px;
+    color:#12355B;
+}
+
+.admin-icon-btn:hover{
+    background:#16a34a;
+    color:#ffffff;
+}
+
+/* ================= BADGE ================= */
+
+.admin-badge{
+    position:absolute;
+    top:-5px;
+    right:-5px;
+    width:22px;
+    height:22px;
+    background:#ef4444;
+    color:#ffffff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:11px;
+    font-weight:700;
+}
+
+/* ================= PROFILE ================= */
+
+.admin-profile{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.admin-profile svg{
+    font-size:38px;
+    color:#16a34a;
+}
+
+.admin-profile h6{
+    margin:0;
+    font-size:15px;
+    color:#12355B;
+    font-weight:700;
+}
+
+.admin-profile small{
+    color:#64748b;
+}
+
+/* ================= LOGOUT ================= */
+
+.admin-logout-btn{
+    border:none;
+    background:#ef4444;
+    color:#ffffff;
+    padding:10px 18px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:600;
+}
+
+.admin-logout-btn:hover{
+    background:#dc2626;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+    .admin-navbar{
+        flex-wrap:wrap;
+        height:auto;
+        padding:15px;
+        gap:15px;
+    }
+
+    .admin-search{
+        width:100%;
+        order:3;
+    }
+
+    .admin-right{
+        width:100%;
+        justify-content:space-between;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .admin-profile div{
+        display:none;
+    }
+
+    .admin-logout-btn{
+        padding:10px 12px;
+    }
+
+}

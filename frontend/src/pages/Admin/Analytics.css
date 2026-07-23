@@ -1,0 +1,116 @@
+/* =====================================================
+   ANALYTICS PAGE
+===================================================== */
+
+.analytics-header{
+    margin-bottom:35px;
+}
+
+.analytics-header h2{
+    font-size:36px;
+    font-weight:700;
+    color:#12355B;
+    margin-bottom:8px;
+}
+
+.analytics-header p{
+    color:#64748b;
+    font-size:16px;
+}
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.analytics-stats{
+    margin-bottom:40px;
+}
+
+/* =====================================================
+   CHART GRID
+===================================================== */
+
+.chart-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-bottom:35px;
+}
+
+.chart-card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.chart-card h4{
+    color:#12355B;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.chart-placeholder{
+    height:300px;
+    border:2px dashed #cbd5e1;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#64748b;
+    font-size:16px;
+    background:#f8fafc;
+}
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.analytics-summary{
+    background:#ffffff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.analytics-summary h3{
+    color:#12355B;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.summary-card{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.summary-card p{
+    margin:0;
+    padding:16px 18px;
+    background:#f8fafc;
+    border-left:5px solid #16a34a;
+    border-radius:12px;
+    color:#475569;
+    font-weight:500;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:992px){
+
+    .chart-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .analytics-header h2{
+        font-size:30px;
+    }
+
+}

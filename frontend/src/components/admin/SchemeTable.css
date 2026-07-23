@@ -1,0 +1,111 @@
+/* =====================================================
+   SCHEME TABLE
+===================================================== */
+
+.scheme-table-card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:25px;
+    margin-top:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    overflow-x:auto;
+}
+
+.scheme-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.scheme-table thead th{
+    background:#f8fafc;
+    color:#12355B;
+    font-size:15px;
+    font-weight:700;
+    padding:18px;
+    border:none;
+}
+
+.scheme-table tbody td{
+    padding:18px;
+    color:#475569;
+    border-top:1px solid #eef2f7;
+    vertical-align:middle;
+}
+
+.scheme-table tbody tr{
+    transition:.3s;
+}
+
+.scheme-table tbody tr:hover{
+    background:#f8fafc;
+}
+
+/* ================= STATUS ================= */
+
+.status-badge{
+    padding:7px 15px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.status-badge.active{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.status-badge.inactive{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.table-actions{
+    display:flex;
+    gap:10px;
+}
+
+.table-actions button{
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:10px;
+    color:#ffffff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.view-btn{
+    background:#2563eb;
+}
+
+.view-btn:hover{
+    background:#1d4ed8;
+}
+
+.edit-btn{
+    background:#16a34a;
+}
+
+.edit-btn:hover{
+    background:#15803d;
+}
+
+.delete-btn{
+    background:#ef4444;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .scheme-table{
+        min-width:1000px;
+    }
+
+}

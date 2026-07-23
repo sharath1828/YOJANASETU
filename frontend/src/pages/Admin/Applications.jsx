@@ -1,12 +1,15 @@
-import "./ManageSchemes.css";
+import "./Applications.css";
 
 import AdminNavbar from "../../components/admin/AdminNavbar";
 import AdminSidebar from "../../components/admin/AdminSidebar";
-import SchemeTable from "../../components/admin/SchemeTable";
-import { FaSearch, FaPlus } from "react-icons/fa";
+import ApplicationTable from "../../components/admin/ApplicationTable";
 
-function ManageSchemes() {
+import { FaSearch, FaFilter } from "react-icons/fa";
+
+function Applications() {
+
   return (
+
     <div className="admin-page">
 
       <AdminNavbar />
@@ -23,19 +26,21 @@ function ManageSchemes() {
 
             <div>
 
-              <h2>🏛 Manage Government Schemes</h2>
+              <h2>📄 Scheme Applications</h2>
 
               <p>
-                Add, update and manage all government welfare schemes.
+
+                Review, approve and reject government scheme applications.
+
               </p>
 
             </div>
 
-            <button className="btn btn-success add-scheme-btn">
+            <button className="btn btn-primary filter-btn">
 
-              <FaPlus />
+              <FaFilter />
 
-              Add Scheme
+              Filter
 
             </button>
 
@@ -43,27 +48,29 @@ function ManageSchemes() {
 
           {/* Search */}
 
-          <div className="scheme-search">
+          <div className="application-search">
 
             <FaSearch className="search-icon" />
 
             <input
               type="text"
-              placeholder="Search by scheme name, category or state..."
+              placeholder="Search by applicant, scheme or application ID..."
             />
 
           </div>
 
           {/* Table */}
 
-          <SchemeTable />
+          <ApplicationTable />
 
         </main>
 
       </div>
 
     </div>
+
   );
+
 }
 
-export default ManageSchemes;
+export default Applications;

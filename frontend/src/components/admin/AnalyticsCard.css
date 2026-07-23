@@ -1,0 +1,76 @@
+/* =====================================================
+   ANALYTICS CARD
+===================================================== */
+
+.analytics-card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    border:1px solid #eef2f7;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.analytics-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+/* ================= ICON ================= */
+
+.analytics-card-icon{
+    width:70px;
+    height:70px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#ffffff;
+    font-size:30px;
+    flex-shrink:0;
+}
+
+/* ================= CONTENT ================= */
+
+.analytics-card-content{
+    display:flex;
+    flex-direction:column;
+}
+
+.analytics-card-content h2{
+    margin:0;
+    font-size:32px;
+    font-weight:700;
+    color:#12355B;
+}
+
+.analytics-card-content p{
+    margin-top:6px;
+    color:#64748b;
+    font-size:15px;
+    font-weight:500;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .analytics-card{
+        padding:20px;
+    }
+
+    .analytics-card-icon{
+        width:60px;
+        height:60px;
+        font-size:26px;
+    }
+
+    .analytics-card-content h2{
+        font-size:28px;
+    }
+
+}
