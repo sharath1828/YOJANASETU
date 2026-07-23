@@ -9,6 +9,12 @@ import {
   getFeaturedSchemes
 } from "../controllers/schemeController.js";
 
+import {
+  saveScheme,
+  removeSavedScheme,
+  getSavedSchemes
+} from "../controllers/savedSchemeController.js";
+
 import protect from "../middleware/authMiddleware.js";
 import adminOnly from "../middleware/adminMiddleware.js";
 
@@ -19,6 +25,16 @@ const router = express.Router();
 router.get("/", getAllSchemes);
 
 router.get("/featured", getFeaturedSchemes);
+
+/* ========= User Saved Schemes ========= */
+
+router.get("/saved", protect, getSavedSchemes);
+
+router.post("/:id/save", protect, saveScheme);
+
+router.delete("/:id/save", protect, removeSavedScheme);
+
+/* ========= Get Single Scheme ========= */
 
 router.get("/:id", getSchemeById);
 
