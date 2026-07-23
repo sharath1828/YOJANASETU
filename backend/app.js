@@ -3,6 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import authRoutes from "./routes/authRoutes.js";
+import schemeRoutes from "./routes/schemeRoutes.js";
 
 const app = express();
 
@@ -27,4 +28,5 @@ app.get("/api/health", (req, res) => {
   });
 });
 app.use("/api/auth", authRoutes);
+app.use("/api/schemes", schemeRoutes);
 export default app;
