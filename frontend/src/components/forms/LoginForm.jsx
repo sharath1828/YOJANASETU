@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import {
@@ -6,34 +6,102 @@ import {
   FaLock,
   FaEye,
   FaEyeSlash,
-  FaGoogle
+  FaGoogle,
 } from "react-icons/fa";
+
+import { useAuth } from "../../context/AuthContext";
 
 function LoginForm() {
 
+  const navigate = useNavigate();
+
+  const { login } = useAuth();
+
   const [showPassword, setShowPassword] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+
+  const [error, setError] = useState("");
+
+  const [formData, setFormData] = useState({
+
+    email: "",
+
+    password: ""
+
+  });
+
+  const handleChange = (e) => {
+
+    setFormData({
+
+      ...formData,
+
+      [e.target.name]: e.target.value,
+
+    });
+
+  };
+
+  const handleSubmit = async (e) => {
+
+    e.preventDefault();
+
+    setLoading(true);
+
+    setError("");
+
+    try {
+
+      const data = await login(formData);
+
+      if (data.user.role === "admin") {
+
+        navigate("/admin/dashboard");
+
+      } else {
+
+        navigate("/dashboard");
+
+      }
+
+    } catch (err) {
+
+      setError(
+
+        err.response?.data?.message || "Login failed."
+
+      );
+
+    }
+
+    setLoading(false);
+
+  };
 
   return (
 
     <div className="login-form">
 
-      {/* Header */}
-
       <div className="login-header">
 
         <h2>Welcome Back</h2>
 
-        <p>
-          Login to continue to YOJANASETU.
-        </p>
+        <p>Login to continue to YOJANASETU.</p>
 
       </div>
 
-      {/* Form */}
+      {error && (
 
-      <form>
+        <div className="alert alert-danger">
 
-        {/* Email */}
+          {error}
+
+        </div>
+
+      )}
+
+      <form onSubmit={handleSubmit}>
 
         <div className="mb-3">
 
@@ -48,16 +116,26 @@ function LoginForm() {
             <FaEnvelope className="input-icon-left" />
 
             <input
+
               type="email"
+
+              name="email"
+
               className="form-control"
+
               placeholder="Enter your email"
+
+              value={formData.email}
+
+              onChange={handleChange}
+
+              required
+
             />
 
           </div>
 
         </div>
-
-        {/* Password */}
 
         <div className="mb-3">
 
@@ -75,9 +153,17 @@ function LoginForm() {
 
               type={showPassword ? "text" : "password"}
 
+              name="password"
+
               className="form-control"
 
               placeholder="Enter password"
+
+              value={formData.password}
+
+              onChange={handleChange}
+
+              required
 
             />
 
@@ -91,19 +177,7 @@ function LoginForm() {
 
             >
 
-              {
-
-                showPassword
-
-                  ?
-
-                  <FaEyeSlash />
-
-                  :
-
-                  <FaEye />
-
-              }
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
 
             </button>
 
@@ -111,21 +185,26 @@ function LoginForm() {
 
         </div>
 
-        {/* Remember + Forgot */}
-
         <div className="remember-forgot">
 
           <div className="form-check">
 
             <input
+
               className="form-check-input"
+
               type="checkbox"
+
               id="remember"
+
             />
 
             <label
+
               className="form-check-label"
+
               htmlFor="remember"
+
             >
 
               Remember Me
@@ -135,8 +214,11 @@ function LoginForm() {
           </div>
 
           <Link
+
             to="/forgot-password"
+
             className="forgot-link"
+
           >
 
             Forgot Password?
@@ -145,23 +227,21 @@ function LoginForm() {
 
         </div>
 
-        {/* Login Button */}
-
         <button
 
           type="submit"
 
           className="login-btn"
 
+          disabled={loading}
+
         >
 
-          Login
+          {loading ? "Logging in..." : "Login"}
 
         </button>
 
       </form>
-
-      {/* Divider */}
 
       <div className="divider">
 
@@ -169,11 +249,12 @@ function LoginForm() {
 
       </div>
 
-      {/* Google Button */}
-
       <button
+
         className="google-btn"
+
         type="button"
+
       >
 
         <FaGoogle />
@@ -182,15 +263,11 @@ function LoginForm() {
 
       </button>
 
-      {/* Register */}
-
       <div className="register-link">
 
         Don't have an account?
 
-        <Link
-          to="/register"
-        >
+        <Link to="/register">
 
           Register
 

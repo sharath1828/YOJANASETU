@@ -1,5 +1,7 @@
 import "./Dashboard.css";
 
+import { useEffect, useState } from "react";
+
 import DashboardNavbar from "../../components/layout/DashboardNavbar";
 import Sidebar from "../../components/layout/Sidebar";
 import DashboardCard from "../../components/cards/DashboardCard";
@@ -12,45 +14,138 @@ import {
   FaUserCheck
 } from "react-icons/fa";
 
-function Dashboard() {
-  return (
-    <div className="dashboard-page">
+import { useAuth } from "../../context/AuthContext";
+import { getUserDashboard } from "../../services/dashboardService";
+import { getRecommendations } from "../../services/recommendationService";
 
-      {/* ================= TOP NAVBAR ================= */}
+function Dashboard() {
+
+  const { user } = useAuth();
+
+  const [dashboard, setDashboard] = useState(null);
+
+  const [recommendations, setRecommendations] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+
+    const loadDashboard = async () => {
+
+      try {
+
+        const response = await getUserDashboard();
+
+        setDashboard(response.dashboard);
+
+      } catch (err) {
+
+        console.error(err);
+
+        setError("Unable to load dashboard.");
+
+      }
+
+    };
+
+    const loadRecommendations = async () => {
+
+      try {
+
+        const response = await getRecommendations();
+
+        setRecommendations(response.recommendedSchemes);
+
+      } catch (err) {
+
+        console.error(err);
+
+      }
+
+    };
+
+    Promise.all([
+      loadDashboard(),
+      loadRecommendations()
+    ]).finally(() => {
+
+      setLoading(false);
+
+    });
+
+  }, []);
+
+  if (loading) {
+
+    return (
+
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "100vh" }}
+      >
+
+        <h3>Loading Dashboard...</h3>
+
+      </div>
+
+    );
+
+  }
+
+  if (error) {
+
+    return (
+
+      <div className="container mt-5">
+
+        <div className="alert alert-danger">
+
+          {error}
+
+        </div>
+
+      </div>
+
+    );
+
+  }
+
+  return (
+        <div className="dashboard-page">
 
       <DashboardNavbar />
 
-      {/* ================= DASHBOARD LAYOUT ================= */}
-
       <div className="dashboard-container">
-
-        {/* Sidebar */}
 
         <Sidebar />
 
-        {/* Main Content */}
-
         <main className="dashboard-content">
 
-          {/* ================= WELCOME SECTION ================= */}
+          {/* Welcome */}
 
           <section className="welcome-section">
 
             <div>
 
               <h2>
-                Welcome Back, Sharath 👋
+
+                Welcome Back, {user?.fullName || "User"} 👋
+
               </h2>
 
               <p>
+
                 Here's your personalized government scheme dashboard.
+
               </p>
 
             </div>
 
           </section>
 
-          {/* ================= STATISTICS ================= */}
+          {/* Dashboard Statistics */}
 
           <section className="stats-section">
 
@@ -59,10 +154,15 @@ function Dashboard() {
               <div className="col-lg-3 col-md-6">
 
                 <DashboardCard
+
                   icon={<FaClipboardList />}
-                  title="Eligible Schemes"
-                  value="24"
+
+                  title="Recommended Schemes"
+
+                  value={dashboard?.recommendedSchemes || 0}
+
                   color="#16a34a"
+
                 />
 
               </div>
@@ -70,10 +170,15 @@ function Dashboard() {
               <div className="col-lg-3 col-md-6">
 
                 <DashboardCard
+
                   icon={<FaBookmark />}
+
                   title="Saved Schemes"
-                  value="08"
+
+                  value={dashboard?.savedSchemes || 0}
+
                   color="#2563eb"
+
                 />
 
               </div>
@@ -81,10 +186,15 @@ function Dashboard() {
               <div className="col-lg-3 col-md-6">
 
                 <DashboardCard
+
                   icon={<FaBell />}
+
                   title="Notifications"
-                  value="05"
+
+                  value={dashboard?.notifications || 0}
+
                   color="#f59e0b"
+
                 />
 
               </div>
@@ -92,10 +202,23 @@ function Dashboard() {
               <div className="col-lg-3 col-md-6">
 
                 <DashboardCard
+
                   icon={<FaUserCheck />}
-                  title="Profile Complete"
-                  value="95%"
+
+                  title="Profile"
+
+                  value={
+
+                    dashboard?.profileCompleted
+
+                      ? "100%"
+
+                      : "Incomplete"
+
+                  }
+
                   color="#7c3aed"
+
                 />
 
               </div>
@@ -104,7 +227,7 @@ function Dashboard() {
 
           </section>
 
-          {/* ================= AI RECOMMENDATIONS ================= */}
+          {/* AI Recommendations */}
 
           <section className="recommendation-section">
 
@@ -113,61 +236,70 @@ function Dashboard() {
               <div>
 
                 <h3>
+
                   🤖 AI Recommendations
+
                 </h3>
 
                 <p>
-                  Based on your profile, our AI found the following
-                  government schemes for you.
+
+                  Based on your profile, our AI found these schemes.
+
                 </p>
 
               </div>
-
-              <button className="btn btn-success">
-
-                View All
-
-              </button>
 
             </div>
 
             <div className="row g-4">
 
-              <div className="col-lg-4 col-md-6">
+              {
 
-                <RecommendationCard
-                  id={1}
-                  match="95"
-                  title="PM Kisan Samman Nidhi"
-                  benefit="₹6,000 financial assistance every year."
-                  category="Agriculture"
-                />
+                recommendations.length > 0 ? (
 
-              </div>
+                  recommendations.map((scheme) => (
 
-              <div className="col-lg-4 col-md-6">
+                    <div
 
-                <RecommendationCard
-                  id={2}
-                  match="92"
-                  title="Ayushman Bharat"
-                  benefit="Health insurance up to ₹5 Lakhs."
-                  category="Healthcare"
-                />
+                      className="col-lg-4 col-md-6"
 
-              </div>
+                      key={scheme._id}
 
-              <div className="col-lg-4 col-md-6">
+                    >
 
-                <RecommendationCard
-                  id={3}
-                  match="89"
-                  title="National Scholarship"
-                  benefit="Scholarship support for eligible students."
-                  category="Education"
-                />
+                      <RecommendationCard
 
-              </div>
+                        id={scheme._id}
+
+                        match="100"
+
+                        title={scheme.schemeName}
+
+                        benefit={scheme.description}
+
+                        category={scheme.category}
+
+                      />
+
+                    </div>
+
+                  ))
+
+                ) : (
+
+                  <div className="col-12">
+
+                    <div className="alert alert-info">
+
+                      No recommendations available.
+
+                    </div>
+
+                  </div>
+
+                )
+
+              }
 
             </div>
 
@@ -178,7 +310,9 @@ function Dashboard() {
       </div>
 
     </div>
+
   );
+
 }
 
 export default Dashboard;
